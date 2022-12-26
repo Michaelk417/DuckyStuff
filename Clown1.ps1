@@ -1,0 +1,29 @@
+﻿$TimesPressed = 0
+function VolUp {
+     $obj = new-object -com wscript.shell
+     $obj.SendKeys([char]175)
+     $TimesPressed = $TimesPressed + 1 
+
+    if($TimesPressed -lt 10){
+        VolUp
+    }
+
+  }
+Invoke-WebRequest -uri https://michaelk417.github.io/DuckyStuff/circus8.wav -OutFile CircusMusic.wav 
+Invoke-WebRequest -Uri https://c8.alamy.com/comp/R4A47B/smiling-clown-R4A47B.jpg -OutFile clown1.jpg
+Invoke-WebRequest -Uri https://cdn.w600.comps.canstockphoto.com/boxing-clown-stock-photography_csp1692720.jpg -OutFile clown2.jpg
+Invoke-WebRequest -Uri https://previews.123rf.com/images/alexraths/alexraths1501/alexraths150100091/35746409-portrait-of-a-smiling-clown-isolated-on-white.jpg -OutFile clown3.jpg
+Invoke-WebRequest -Uri https://thumbs.dreamstime.com/z/funny-clown-microphone-singing-karaoke-isolated-white-background-funny-clown-microphone-singing-karaoke-isolated-195652393.jpg -OutFile clown4.jpg
+$PlayWav=New-Object System.Media.SoundPlayer
+VolUp
+$PlayWav.SoundLocation='CircusMusic.wav'
+$PlayWav.Play()
+
+.\clown1.jpg
+Start-Sleep 5
+.\clown2.jpg
+Start-Sleep 5
+.\clown3.jpg
+Start-Sleep 5
+.\clown4.jpg
+
