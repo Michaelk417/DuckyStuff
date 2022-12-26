@@ -17,7 +17,7 @@ Invoke-WebRequest -uri https://michaelk417.github.io/DuckyStuff/circus8.wav -Out
 $PlayWav=New-Object System.Media.SoundPlayer
 VolUp
 $PlayWav.SoundLocation='CircusMusic.wav'
-$PlayWav.Play()
+$PlayWav.PlayLooping()
 
 #.\clown1.jpg
 #Start-Sleep 5
@@ -33,7 +33,10 @@ Function Clown {
 Invoke-WebRequest -Uri $urlstart$Clownnumber$urlend -OutFile $Clownnumber$urlend
 start $Clownnumber$urlend
 $Clownnumber = $Clownnumber +1
-start-sleep -Seconds 2
+start-sleep -Milliseconds 500
+if($Clownnumber -gt 497){
+$Clownnumber = 1
+}
 Clown
 }
 Clown
