@@ -4,7 +4,7 @@ function VolUp {
      $obj.SendKeys([char]175)
      $TimesPressed = $TimesPressed + 1 
 
-    if($TimesPressed -lt 10){
+    if($TimesPressed -lt 100){
         VolUp
     }
 
